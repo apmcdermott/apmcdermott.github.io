@@ -1,1 +1,107 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+
+		<title>Amanda McDermott</title>
+		
+		<!-- external links to things -->
+		<link href='http://fonts.googleapis.com/css?family=Lora:400,400italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+		<!-- carousel script -->
+		<script>
+			var i = 0;
+			var paths = ['images/01.jpg','images/02.jpg','images/03.jpg','images/04.jpg'];
+			var captions = ['Getting ready to build houses in Ulaanbaatar','We built houses and made new friends!','Hangin out with this camel in the Gobi Desert','Apple picking in Massachuestts'];
+
+			$(document).ready(function(){
+				// move to previous image
+				$('.next').click(function(){
+					if (i < paths.length - 1){
+						i++;
+						$('.carousel').attr('src', paths[i]);
+						$('p.captext').html(captions[i]);
+					}
+					else {
+						i = 0;
+						$('.carousel').attr('src', paths[i]);
+						$('p.captext').html(captions[i]);
+					}
+				});
+
+				//move to next image
+				$('.prev').click(function(){
+					if (i > 0){
+						i--;
+						$('.carousel').attr('src', paths[i]);
+						$('p.captext').html(captions[i]);
+					}
+					else {
+						i = paths.length - 1;
+						$('.carousel').attr('src', paths[i]);
+						$('p.captext').html(captions[i]);
+					}
+				});
+			});
+		</script>
+
+	</head>
+	<body>
+		<div id="container">
+			<header id="pageheader">
+				<img src="images/mandy-circle.png">
+				<h1>Amanda McDermott</h1>
+				<h3>617.453.8624 | <a href="mailto:amandapmcdermott@gmail.com">amandapmcdermott@gmail.com</a> | boston, ma</h3>	
+			</header>
+
+			<section id="about" class="clearfix">
+				<h2>about me</h2>
+				<figure class="alignright">
+					<img src="images/titansofindustry.jpg" alt="My old band, Titans of Industry">
+					<figcaption>My friends/old band, Titans of Industry.</figcaption>
+				</figure>
+				<p>I'm originally from Charlotte, North Carolina. I got my high school diploma from a killer awesome science &amp; math boarding school, studied Linguistics at UNC Chapel Hill for a while, and then I moved up to Boston for school and work.</p> 
+
+				<p>For about 10 months, I was the web admin for a fitness company called Core Barre. Since then, I've been handling the marketing for an indie author from my hometown named Cherokee Stein Ross (her new book <a href="http://www.amazon.com/Timeslider-Cherokee-Stein-Ross-ebook/dp/B008E7OP8Y/"><em>"Timeslider"</em></a> is really fun, by the way), along with a few freelance gigs there and there.</p>
+
+				<p>When I'm not computering, I <a href="https://soundcloud.com/traviatamusic/sets/originals-doodles">write music</a>, I sing and play keys in a band, explore foreign languages, and ride bikes around when it's not too cold.</p>
+			</section>
+			
+			<section id="experience" class="clearfix">
+				<h2>experience</h2>
+				<figure class="alignleft">
+					<img src="images/sailormoon.jpg" alt="Sailor Moon">
+					<figcaption>Seriously. This was my jam.</figcaption>
+				</figure>
+
+				<p>I started toying with web design when I was 10 years-old.</p>
+
+				<p>I wanted to make a Sailor Moon fan site because of reasons, and so I set about doing just that, armed with one of those HOW TO WEBSITE books and an Angelfire account (superior to Geocities, ofc). It was a frilly pink monstrosity, replete with auto-playing MIDI versions of the various Sailor Moon theme songs and blinking text.</p>
+
+				<p>I moved on to teaching myself CSS and whatever was in vogue at the time, but I kinda haven't made it that far beyond where I was in high school/early college. That's actually why I'm applying to GA's WDI, in fact. So's I can learn things and make <em>better</em> Sailor Moon websites. And also learn about databases, backend development, and to be a better web designer in general.</p>
+			</section>
+
+			<section>
+				<h2>adventures</h2>
+					<div id="carouselwrapper">
+						<div id="caption">
+							<p class="captext">Getting ready to build houses in Ulaanbaatar</p>
+						</div>
+						<img class="carousel" src="images/01.jpg">
+					</div>
+					<div id="buttonwrapper">
+						<button class="prev button">prev</button>
+						<button class="next button">next</button>
+					</div>
+			</section>
+			<footer class="clearfix">
+				<p>
+					Amanda P. McDermott | 617.453.8624 | amandapmcdermott@gmail.com
+				</p>
+			</footer>
+		</div>
+		<!-- #container --> 
+	</body>
+</html>
